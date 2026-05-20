@@ -9,4 +9,5 @@ int main(){
     resultado = fatorial(numero);
 
     printf("O fatorial de %d é %d",numero,resultado);
+    print("Feito por Marcelo Rigotti")
 }
