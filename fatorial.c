@@ -7,10 +7,10 @@ int main(int argc, char *argv[]) {
     int resultado = 1;
 
     if (argc > 1) {
-        numero = atoi(argv[1]);
+        numero = atoi(argv[1]); 
     } else {
         printf("Digite um número: ");
-        scanf("%d", &numero);
+        if (scanf("%d", &numero) != 1) return 1;
     }
 
     resultado = fatorial(numero);
