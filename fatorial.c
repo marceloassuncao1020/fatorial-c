@@ -1,13 +1,29 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include "function.c"
 
-int main(){
+int main(int argc, char *argv[]) {
     int numero;
     int resultado = 1;
-    printf("Digite um número: ");
-    scanf("%d",&numero);
+
+    if (argc > 1) {
+        numero = atoi(argv[1]);
+    } else {
+        printf("Digite um número: ");
+        scanf("%d", &numero);
+    }
 
     resultado = fatorial(numero);
 
-    printf("O fatorial de %d é %d",numero,resultado);
-    print("Feito por Marcelo Rigotti")
+    printf("O fatorial de %d é %d\n", numero, resultado);
+    printf("Feito por Marcelo Rigotti\n");
+
+    FILE *arquivo = fopen("fatorial.txt", "w");
+    if (arquivo != NULL) {
+        fprintf(arquivo, "O fatorial de %d é %d\n", numero, resultado);
+        fprintf(arquivo, "Feito por Marcelo Rigotti\n");
+        fclose(arquivo);
+    }
+
+    return 0;
 }
