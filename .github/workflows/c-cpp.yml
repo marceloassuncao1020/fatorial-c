@@ -17,5 +17,3 @@ jobs:
       run: gcc test_fatorial.c -o test_fatorial
     - name: execute
       run: ./test_fatorial
-    - name: mostrar o conteúdo do arquivo criado
-      run: cat fatorial.txt
